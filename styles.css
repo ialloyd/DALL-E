@@ -8,13 +8,14 @@
 body {
 
     margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
 h1 {
 
     text-align: center;
-    margin: 10px 0;
+    margin: 15px 0;
     position: sticky;
     top: 5px;
 }
@@ -26,6 +27,7 @@ h1 {
     align-items: center;
     position: sticky;
     top: 50px;
+    margin-bottom: 30px;
 
 }
 
@@ -38,7 +40,7 @@ h1 {
 .top>span {
 
     font-size: xx-large;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 p {
@@ -51,8 +53,9 @@ p {
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-    margin: 30px 0;
+    gap: 10px;
+    margin: auto;
+    width: 82%;
 }
 
 .container>img {
@@ -60,6 +63,14 @@ p {
     padding: 10px;
     width: 100%;
     border-radius: 25px;
+    border: 1px solid grey
+}
+
+.container>img:hover {
+
+    transform: scale(0.9);
+    transition: transform 0.5s;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 ::-webkit-scrollbar {
@@ -115,4 +126,13 @@ p {
         border: 8px solid #f3f3f3;
         border-top: 8px solid lightskyblue;
     }
+}
+
+#typewriter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    text-align: center;
 }
