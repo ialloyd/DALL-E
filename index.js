@@ -22,7 +22,6 @@ function preProcessor() {
         return;
     }
     errorMessage.textContent = '';
-    container.innerHTML = '';
     typewriter.style.display = 'none';
 
     const requestBody = {
@@ -57,6 +56,7 @@ async function getData(requestBody) {
         }
 
         const jsonData = await response.json();
+        container.innerHTML = '';
         document.getElementById("spinner").style.display = "none";
 
         postProcessor(jsonData);
@@ -92,7 +92,7 @@ let currentText = 0;
 
 function typeWriter() {
     if (i < txt[currentText].length) {
-        typewriter.innerHTML += txt[currentText].charAt(i);
+        typewriter.textContent += txt[currentText].charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     } else {
@@ -102,7 +102,7 @@ function typeWriter() {
 
 function eraseWriter() {
     if (i >= 0) {
-        typewriter.innerHTML = txt[currentText].substring(0, i);
+        typewriter.textContent = txt[currentText].substring(0, i);
         i--;
         setTimeout(eraseWriter, eraseSpeed);
     } else {
